@@ -1,0 +1,19 @@
+extends ../shared/template
+
+block content
+  h1 Filtered Chimeras
+
+  #chimeraDisplay
+    each chimera in chimeras
+      .chimera
+        .delete
+          form(action='/chimeras/#{chimera._id}/delete', method='POST')
+            button X
+        .name
+          a(href='/chimeras/#{chimera._id}')= chimera.name
+        .age age: #{chimera.age}
+        .sex sex: #{chimera.sex}
+        .image
+          .tail(style= 'background-image: url(/img/#{chimera.tail}tail.png);')
+          .body(style= 'background-image: url(/img/#{chimera.body}body.png);')
+          .head(style= 'background-image: url(/img/#{chimera.head}head.png);')

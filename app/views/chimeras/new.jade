@@ -1,0 +1,31 @@
+extends ../shared/template
+
+block content
+  h1 New Chimera
+  #newForm
+    form(method='POST', action='/chimeras')
+      input(name='name', type='text', placeholder='name')
+      input(name='age', type='text', placeholder='age')
+      label sex:
+      select(name='sex')
+        option female
+        option male
+      label head:
+      select(name='head')
+        option twilight
+        option rainbow
+        option applejack
+        option derpy
+      label body:
+      select(name='body')
+        option twilight
+        option rainbow
+        option applejack
+        option derpy
+      label tail:
+      select(name='tail')
+        option twilight
+        option rainbow
+        option applejack
+        option derpy
+      button Add
